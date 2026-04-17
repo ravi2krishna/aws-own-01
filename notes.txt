@@ -1,0 +1,126 @@
+Class - 1
+==========
+
+AWS - Amazon Web Services 
+
+    -> Any Application Has Data 
+
+        -> Data ?? 
+
+            -> Data is in Server (Database - Web - Application - Storage etc)
+
+                -> Server ?? 
+
+                    -> Servers are hosted on Datacenters 
+
+
+    -> Datacenter 
+
+        -> Datacenter is a building, space within building or group of
+        buildings used to house Computer Systems & Telecommunications Systems.
+
+    -> Physical Datacenter ? 
+
+        -> Cons 
+
+    -> Cloud Computing 
+
+        -> On-Demand availability of Compute Power, Database Storage,
+        Applications and other IT resources through platforms like
+        (AWS-AZURE-GCP etc) via "Internet" with "Pay-As-You-Go" Model.
+    
+    
+    -> Cloud Offerings 
+
+        -> IAAS 
+
+            -> Infrastructure As A Service (Admin) (Less Costlier)
+
+                Application         - Customer Managed    
+                Runtime / lib       - Customer Managed
+                Operating System    - Customer Managed
+                Virtualization      - AWS Managed
+                Hardware            - AWS Managed
+
+        -> PAAS 
+
+            -> Platform As A Service (Developer) (More Costlier)
+
+                Application         - Customer Managed    
+                Runtime / lib       - AWS Managed
+                Operating System    - AWS Managed
+                Virtualization      - AWS Managed
+                Hardware            - AWS Managed
+
+        -> SAAS 
+
+            -> Software As A Service 
+
+                -> Monitoring As A Service (Cloudwatch)
+
+                -> Messaging As A Service (SNS)
+
+    -> Customer 1: Solution -> Only IAAS 
+
+    -> Customer 2: Solution -> IAAS + PAAS 
+
+        -> Web Server - IAAS [EC2]
+
+        -> Database Servers - PAAS [RDS]
+
+    
+    -> Cloud Models 
+
+        -> Public Cloud  
+
+            -> Public Cloud resources are shared across "Multiple Tenants" 
+
+        -> Private Cloud 
+
+            -> Private Cloud resources are used only by "Single Tenant"
+
+        -> Hybrid Cloud 
+
+            -> Mix of Public Cloud resources & Private Cloud resources
+    
+
+    -> Application                                  -> Application
+    (Physical Infrastructure)                       (Cloud Infrastructure)
+
+        Servers                                         AWS EC2 
+           +                                               +
+        Storage                                         AWS S3 
+           +                                               +
+        Databases           Application                 AWS RDS 
+           +                 (myntra)                      +
+        Networking                                      AWS VPC 
+           +                                               +
+        Security                                        AWS IAM 
+           +                                               +
+        etc                                               etc
+
+
+    -> Application is now on Cloud (4 Pillars Of Cloud)
+
+        -> Providing High Availability (HA)
+
+            -> HA ensures Applications Run Continually (24/7)
+            Uptime should be 99.9% 
+
+        -> Providing Fault Tolerance 
+
+            -> Ability To Continue To Operate without Interruption 
+
+            -> Fault Tolerance Give Self Healing Capabilities 
+
+        -> Providing Security
+
+            -> Provide Security For Applications
+
+        -> Providing Scalability 
+
+            -> Ability To Handle Increasing / Decreasing Workloads and 
+            accommodate the resources accordingly.
+
+            -> Horizontal Scaling & Vertical Scaling 
+
