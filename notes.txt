@@ -255,4 +255,13 @@ Class - 2
 
 
 
+Class - 3
+==========
+
+    -> "To enable access to or from the internet to an instance in a VPC subnet, 
+    you must attach an Internet gateway to your VPC, 
+    ensure that your subnet route table points to the Internet gateway and 
+    ensure that instance has a public IP address, and 
+    ensure that your network access control and security group rules 
+    allow the relevant traffic to your instance" -- AWS
 
