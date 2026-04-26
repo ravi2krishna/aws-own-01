@@ -324,6 +324,59 @@ Class - 4
 		-> SSH traffic enabled for administration from internet
 		-> HTTP traffic port 8080 for clients from internet
 
-	-> Coming to security of Database Servers, they should have only SSH access from app servers
+	-> Coming to security of Database Servers, 
 		-> SSH traffic enabled from web servers only
 		-> Postgres Database Traffic Allowed from App Servers
+
+
+Class - 5
+==========
+
+
+    -> Earlier we had our Infrastructure Setup Using Graphical User Interface (GUI) (Beginners)
+
+        -> Created SirusLync VPC (Web, App, DB) using GUI took 60 mins 
+
+        -> New Requirement: TCS VPC (Web, App, DB) using GUI took 60 mins 
+
+        -> New Requirement: ACC VPC (Web, App, DB) using GUI took 60 mins 
+
+        -> NOTE: Using AWS Console
+
+    
+    -> We Can also setup Infrastructure Using Command Line Interface (CLI) (Intermediate) (Admin)
+
+        -> Created SirusLync VPC (Web, App, DB) using CLI took 60 mins 
+
+        -> New Requirement: TCS VPC (Web, App, DB) using CLI took 10 mins 
+
+        -> New Requirement: ACC VPC (Web, App, DB) using CLI took 10 mins
+
+        -> NOTE: Using AWS CLI Tool 
+
+    
+    -> We Can also setup Infrastructure Using CODE (SCRIPTS) (Pro) (DevOps)
+
+        -> Created SirusLync VPC (Web, App, DB) using CODE took 60 mins 
+
+        -> New Requirement: TCS VPC (Web, App, DB) using CODE took 2 mins 
+
+        -> New Requirement: ACC VPC (Web, App, DB) using CODE took 2 mins
+
+        -> NOTE: Using AWS Cloudformation Service (IaC - Infrastructure As Code) (Terraform / Ansible / Chef / Puppet)
+
+
+
+    -> AWS CLI 
+
+        -> The AWS Command Line Interface (AWS CLI) is a unified tool to manage your AWS services. 
+        With just one tool to download and configure, you can control "multiple AWS services" 
+        from the command line and automate them through scripts.
+
+        -> AWS CLI Installation 
+
+            -> https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+        -> AWS CLI Commands Reference 
+
+            -> https://docs.aws.amazon.com/cli/latest/
