@@ -1,0 +1,48 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: A VPC Template For amazon VPC - CloudFormation template with YAML comments.
+# Resources section
+Resources:
+  amazonVPC: 
+    Type: AWS::EC2::VPC
+    Properties: 
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+      Tags:
+       - Key: Name
+         Value: amazon 
+
+  amazonPublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref amazonVPC
+      CidrBlock: 10.0.0.0/24
+      MapPublicIpOnLaunch: 'true'
+      Tags:
+      - Key: Name
+        Value: amazon-public-subnet
+
+  amazonPrivateSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref amazonVPC
+      CidrBlock: 10.0.1.0/24
+      Tags:
+      - Key: Name
+        Value: amazon-private-subnet
+
+  amazonInternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+      - Key: Name
+        Value: amazon-igw 
+
+  amazonAttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId:
+        Ref: amazonVPC
+      InternetGatewayId:
+        Ref: amazonInternetGateway
+  

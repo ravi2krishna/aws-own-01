@@ -1,6 +1,8 @@
 Class - 1
 ==========
 
+https://docs.google.com/spreadsheets/d/1ctlKAv6qGU7TTXlb6U-_Hm6CkcWvnI_gRMttkyWzLMs/edit?usp=sharing
+
 AWS - Amazon Web Services 
 
     -> Any Application Has Data 
@@ -380,3 +382,73 @@ Class - 5
         -> AWS CLI Commands Reference 
 
             -> https://docs.aws.amazon.com/cli/latest/
+
+    
+
+Class - 6
+==========
+
+    -> Commands To Work With CLI 
+
+    -> Launch An EC2 instance with Regular Settings 
+
+        -> sudo apt update -y 
+        -> sudo apt install -y unzip
+        -> curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        -> unzip awscliv2.zip
+        -> sudo ./aws/install
+        -> aws 
+        -> aws s3 ls 
+        -> aws configure 
+            -> It will prompt for access_key & secret_key 
+        -> aws s3 ls 
+
+
+    -> Goal: Create VPC Using CLI 
+
+        -> aws ec2 create-vpc --cidr-block 10.0.0.0/16
+
+        -> aws ec2 create-tags --resources vpc-0ddc2a6a0e3910070 --tags Key=Name,Value=myntra
+
+        -> aws ec2 create-subnet --vpc-id vpc-0ddc2a6a0e3910070 --cidr-block 10.0.0.0/24 
+
+        -> aws ec2 create-tags --resources subnet-09e52b1955ca82fbe --tags Key=Name,Value=myntra-public-sn
+
+        -> aws ec2 modify-subnet-attribute --subnet-id subnet-09e52b1955ca82fbe --map-public-ip-on-launch
+
+        -> aws ec2 create-subnet --vpc-id vpc-0ddc2a6a0e3910070 --cidr-block 10.0.1.0/24 
+
+        -> aws ec2 create-tags --resources subnet-037850e2732e80ecf --tags Key=Name,Value=myntra-private-sn
+
+        -> aws ec2 create-route-table --vpc-id vpc-0ddc2a6a0e3910070
+
+        -> aws ec2 create-tags --resources rtb-07f960c267517978c --tags Key=Name,Value=myntra-public-rt 
+
+        -> aws ec2 create-internet-gateway 
+
+        -> aws ec2 create-tags --resources igw-0b7260f310f9ac28e --tags Key=Name,Value=myntra-igw
+
+        -> aws ec2 attach-internet-gateway --internet-gateway-id igw-0b7260f310f9ac28e --vpc-id vpc-0ddc2a6a0e3910070
+
+        -> aws ec2 create-route --route-table-id rtb-07f960c267517978c --destination-cidr-block 0.0.0.0/0 --gateway-id igw-0b7260f310f9ac28e
+
+        -> aws ec2 associate-route-table --route-table-id rtb-07f960c267517978c --subnet-id subnet-09e52b1955ca82fbe
+
+        -> Try:
+
+            -> Create CLI --> Requirement Given by XYZ Organization for Custom VPC 
+
+
+
+    -> Infrastructure As Code (IaC)
+
+        -> Infrastructure as code is the process of managing and provisioning computer data centers 
+        through machine-readable definition files [CODE].
+
+        -> Cloud Formation Template 
+
+            -> https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-formats.html 
+
+
+
+
