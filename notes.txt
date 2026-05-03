@@ -451,4 +451,78 @@ Class - 6
 
 
 
+Class - 7
+==========
 
+    -> Server Management 
+
+        -> Server Management is done using service called EC2 
+
+        -> EC2 - Elastic Compute Cloud
+
+        -> EC2 allows users to rent virtual computers (Servers/Machines) on which 
+        "you can run your own computer applications"
+
+        -> NOTE: Server in aws is referred as EC2 Instance / Instance
+
+            -> Computer has hardware                        -> Server has Instance Type [cpu + ram]
+                i3 / i5 / 4 GB RAM etc                          t2.micro, t2.medium, t2.large etc 
+
+            -> Computer has hard disk                       -> Instance has EBS (Elastic Block) Storage
+                250 GB / 500 GB / 1 TB                          250 GB / 500 GB / 1 TB                      
+            
+            -> Computer has network                         -> Instance has VPC 
+
+            -> Compute has operating system                 -> Instance has AMI - Amazon Machine Image 
+
+            -> Computer has Authentication                  -> Instance has Authentication
+                username & password                             key pairs (public & private key)
+
+            -> Computer has applications                    -> Instance has applications
+                chrome / notepad etc                            myntra / flipkart / netflix etc 
+
+
+    -> https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-types.html
+
+    -> https://miro.medium.com/v2/0*TOn9iET13IF9we-k.jpg
+
+    -> https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html
+    
+    -> https://aws.amazon.com/ec2/pricing/
+
+
+    -> Login To Server With Key
+
+            -> ssh -i aws.pem ubuntu@3.138.172.167
+
+            -> chmod 400 aws.pem
+
+            -> ssh -i aws.pem ubuntu@3.138.172.167
+
+    -> Web Server 
+
+        -> A web server is computer software that accepts requests via HTTP/S 
+        to distribute web content.
+        
+        -> NGINX Web Server is popular for hosting Web Sites & Web Applications 
+
+        -> Setup Web Server 
+
+            -> sudo apt update -y 
+            -> sudo apt install nginx -y 
+
+        -> Ecommerce Application URL 
+
+            -> Application Code - https://github.com/ravi2krishna/ecomm.git 
+
+            -> Document Root: Location where website code is hosted /var/www/html 
+
+            -> Using git we can clone applications
+
+                -> sudo git clone <url> <destination> 
+
+                -> sudo git clone https://github.com/ravi2krishna/ecomm.git  /var/www/html 
+
+                -> sudo rm -r /var/www/html/* 
+
+                -> sudo git clone https://github.com/ravi2krishna/ecomm.git  /var/www/html   
