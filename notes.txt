@@ -451,7 +451,7 @@ Class - 6
 
 
 
-Class - 7
+Class - 7 (EC2 Server Setup With Ecommerce Application)
 ==========
 
     -> Server Management 
@@ -526,3 +526,26 @@ Class - 7
                 -> sudo rm -r /var/www/html/* 
 
                 -> sudo git clone https://github.com/ravi2krishna/ecomm.git  /var/www/html   
+
+
+Class - 8 (SNAPSHOTS & AMI's)
+==========
+
+    -> We Have a Server in A-Zone, and unfortunately A-Zone is DOWN 
+
+        -> Next step is to setup Server in B-Zone 
+
+    -> We are opening new business unit in Mumbai Region, Earlier we had business unit in US Region 
+
+        -> Next step is to setup Server in Mumbai Region 
+
+    -> Accidentally i have deleted instance in A-Zone 
+
+       -> Next step is to setup Server in A-Zone, as there is no Backup available 
+
+    -> NOTE: There is one stop solution for all above issues i.e SNAPSHOTS 
+
+        -> SNAPSHOTS are applicable for EBS VOLUMES (Disk)
+
+        
+
