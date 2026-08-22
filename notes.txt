@@ -267,6 +267,11 @@ Class - 3
     ensure that your network access control and security group rules 
     allow the relevant traffic to your instance" -- AWS
 
+    -> https://portchecker.co/check-v0
+
+    -> Customer -> IGW -> VPC -> Subnets -> Route Table(IGW Rule) -> Instance(is in subnet) -> NACL(Subnet Firewall) -> Security Group (Instance Firewall)
+    
+
 Class - 4
 ==========
 
@@ -279,6 +284,8 @@ Class - 4
 
         -> The allowed block size is between a /16 netmask (65,536 IP addresses) and 
         /28 netmask (16 IP addresses).
+
+        -> CIDR Chart Reference - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS6k6zXee9c6jv7fClL8vtD51-dnrOsrHfp58znU5hPEFYFDpK_tS2g2o&s=10
 
         -> AWS recommends to create a CIDR with 10.0.0.0/16 for future purpose
 
@@ -294,7 +301,7 @@ Class - 4
 
     -> Most Popular Applications
         
-        https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_websites
+        -> https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_websites
 
     
     -> Requirement Given by XYZ Organization for Custom VPC 
@@ -308,7 +315,7 @@ Class - 4
 
 	-> First Subnet is for web servers, around 4k
 
-	-> Second Subnet is for backend servers, around 4k
+	-> Second Subnet is for app servers, around 4k
 
 	-> Third Subnet is for database servers, around 4k
 
@@ -317,6 +324,8 @@ Class - 4
 	-> The web servers and app servers needs to be communicated from internet
 
 	-> The database servers needs to be communicated only from App Servers, but not from internet
+
+        -> https://media.geeksforgeeks.org/wp-content/uploads/20231108115918/Three-Tier-architecture.png
     
 	-> Coming to security of Web Servers, they should have only 
 		-> SSH traffic enabled for administration from internet
