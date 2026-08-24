@@ -1,120 +1,120 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: An Web Application VPC Template for yt 
+Description: An Web Application VPC Template for hrms 
 Resources:
-  ytVPC: 
+  hrmsVPC: 
     Type: AWS::EC2::VPC
     Properties: 
-      CidrBlock: 10.0.0.0/16
+      CidrBlock: 192.168.0.0/16
       EnableDnsSupport: 'true'
       EnableDnsHostnames: 'true'
       Tags:
         - Key: Name
-          Value: yt
+          Value: hrms
 
-  ytpublicSubnet:
+  hrmspublicSubnet:
     Type: AWS::EC2::Subnet
     Properties:
-      VpcId: !Ref ytVPC
-      CidrBlock: 10.0.0.0/24
+      VpcId: !Ref hrmsVPC
+      CidrBlock: 192.168.0.0/24
       AvailabilityZone: "us-east-2a"
       MapPublicIpOnLaunch: "true"
       Tags:
       - Key: Name
-        Value: yt-public-subnet
+        Value: hrms-public-subnet
 
   
-  ytpriavteSubnet:
+  hrmspriavteSubnet:
     Type: AWS::EC2::Subnet
     Properties:
-      VpcId: !Ref ytVPC
-      CidrBlock: 10.0.1.0/24
+      VpcId: !Ref hrmsVPC
+      CidrBlock: 192.168.1.0/24
       AvailabilityZone: "us-east-2b"
       MapPublicIpOnLaunch: "false"
       Tags:
       - Key: Name
-        Value: yt-private-subnet
+        Value: hrms-private-subnet
 
-  ytInternetGateway:
+  hrmsInternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
       Tags:
       - Key: Name
-        Value: yt-internet-gateway
+        Value: hrms-internet-gateway
 
-  ytAttachGateway:
+  hrmsAttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
       VpcId:
-        Ref: ytVPC
+        Ref: hrmsVPC
       InternetGatewayId:
-        Ref: ytInternetGateway
+        Ref: hrmsInternetGateway
 
-  ytPublicRouteTable:
+  hrmsPublicRouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId:  
-        Ref: ytVPC
+        Ref: hrmsVPC
       Tags:
       - Key: Name
-        Value: yt-public-RouteTable
+        Value: hrms-public-RouteTable
 
-  ytPublicRoute:
+  hrmsPublicRoute:
     Type: AWS::EC2::Route
-    DependsOn: ytAttachGateway
+    DependsOn: hrmsAttachGateway
     Properties:
        RouteTableId:
-         Ref: ytPublicRouteTable
+         Ref: hrmsPublicRouteTable
        DestinationCidrBlock: 0.0.0.0/0
        GatewayId:
-         Ref: ytInternetGateway
+         Ref: hrmsInternetGateway
   
-  ytPublicSubnetRouteTableAssociation:
+  hrmsPublicSubnetRouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       SubnetId:
-        Ref: ytpublicSubnet
+        Ref: hrmspublicSubnet
       RouteTableId:
-        Ref: ytPublicRouteTable
+        Ref: hrmsPublicRouteTable
 
-  ytPrivateRouteTable:
+  hrmsPrivateRouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId:  
-        Ref: ytVPC
+        Ref: hrmsVPC
       Tags:
       - Key: Name
-        Value: yt-private-RouteTable
+        Value: hrms-private-RouteTable
   
-  ytPrivateSubnetRouteTableAssociation:
+  hrmsPrivateSubnetRouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       SubnetId:
-        Ref: ytpriavteSubnet
+        Ref: hrmspriavteSubnet
       RouteTableId:
-        Ref: ytPrivateRouteTable
+        Ref: hrmsPrivateRouteTable
 
-  ytPublicNetworkAcl:
+  hrmsPublicNetworkAcl:
     Type: AWS::EC2::NetworkAcl
     Properties:
       VpcId:
-        Ref: ytVPC
+        Ref: hrmsVPC
       Tags:
       - Key: Name
-        Value: yt-public-nacl
+        Value: hrms-public-nacl
 
-  ytPublicNetworkAclAssociation:
+  hrmsPublicNetworkAclAssociation:
     Type: AWS::EC2::SubnetNetworkAclAssociation
     Properties:
       SubnetId:
-        Ref: ytpublicSubnet
+        Ref: hrmspublicSubnet
       NetworkAclId:
-        Ref: ytPublicNetworkAcl
+        Ref: hrmsPublicNetworkAcl
 
-  ytPublicSecurityGroup:
+  hrmsPublicSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Allow http to client host
-      VpcId: !Ref ytVPC
+      VpcId: !Ref hrmsVPC
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 22
@@ -122,8 +122,8 @@ Resources:
           CidrIp: 0.0.0.0/0
       SecurityGroupEgress:
         - IpProtocol: tcp
-          FromPort: 80
-          ToPort: 80
+          FromPort: 8080
+          ToPort: 8080
           CidrIp: 0.0.0.0/0
 
   

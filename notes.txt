@@ -346,36 +346,24 @@ Class - 5
 
     -> Earlier we had our Infrastructure Setup Using Graphical User Interface (GUI) (Beginners)
 
-        -> Created SirusLync VPC (Web, App, DB) using GUI took 60 mins 
+        -> Created CRM VPC (Web, App, DB) using GUI took 60 mins 
 
-        -> New Requirement: TCS VPC (Web, App, DB) using GUI took 60 mins 
+        -> New Requirement: YouTube VPC (Web, App, DB) using GUI took 60 mins 
 
-        -> New Requirement: ACC VPC (Web, App, DB) using GUI took 60 mins 
+        -> New Requirement: NetFlix VPC (Web, App, DB) using GUI took 60 mins 
 
         -> NOTE: Using AWS Console
 
     
     -> We Can also setup Infrastructure Using Command Line Interface (CLI) (Intermediate) (Admin)
 
-        -> Created SirusLync VPC (Web, App, DB) using CLI took 60 mins 
+        -> Created CRM VPC (Web, App, DB) using CLI took 60 mins 
 
-        -> New Requirement: TCS VPC (Web, App, DB) using CLI took 10 mins 
+        -> New Requirement: YouTube VPC (Web, App, DB) using CLI took 10 mins 
 
-        -> New Requirement: ACC VPC (Web, App, DB) using CLI took 10 mins
+        -> New Requirement: NetFlix VPC (Web, App, DB) using CLI took 10 mins
 
         -> NOTE: Using AWS CLI Tool 
-
-    
-    -> We Can also setup Infrastructure Using CODE (SCRIPTS) (Pro) (DevOps)
-
-        -> Created SirusLync VPC (Web, App, DB) using CODE took 60 mins 
-
-        -> New Requirement: TCS VPC (Web, App, DB) using CODE took 2 mins 
-
-        -> New Requirement: ACC VPC (Web, App, DB) using CODE took 2 mins
-
-        -> NOTE: Using AWS Cloudformation Service (IaC - Infrastructure As Code) (Terraform / Ansible / Chef / Puppet)
-
 
 
     -> AWS CLI 
@@ -402,15 +390,7 @@ Class - 6
     -> Launch An EC2 instance with Regular Settings 
 
         -> sudo apt update -y 
-        -> sudo apt install -y unzip
-        -> curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-        -> unzip awscliv2.zip
-        -> sudo ./aws/install
-        -> aws 
-        -> aws s3 ls 
-        -> aws configure 
-            -> It will prompt for access_key & secret_key 
-        -> aws s3 ls 
+        -> sudo apt install -y awscli
 
 
     -> Goal: Create VPC Using CLI 
@@ -453,6 +433,19 @@ Class - 6
 
         -> Infrastructure as code is the process of managing and provisioning computer data centers 
         through machine-readable definition files [CODE].
+
+
+        -> We Can also setup Infrastructure Using CODE (SCRIPTS) (Pro) (DevOps)
+
+        -> Created CRM VPC (Web, App, DB) using CLI took 60 mins 
+
+        -> New Requirement: YouTube VPC (Web, App, DB) using CODE took 2 mins 
+
+        -> New Requirement: NetFlix VPC (Web, App, DB) using CODE took 2 mins
+
+        -> NOTE: Using AWS Cloudformation Service (IaC - Infrastructure As Code) 
+        (Terraform / Ansible / Chef / Puppet)
+
 
         -> Cloud Formation Template 
 
