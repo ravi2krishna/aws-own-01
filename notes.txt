@@ -483,8 +483,12 @@ Class - 7 (EC2 Server Setup With Ecommerce Application)
             -> Computer has applications                    -> Instance has applications
                 chrome / notepad etc                            myntra / flipkart / netflix etc 
 
+        
+        -> NOTE: AWS Has Only Password less Authentication For Both Linux & Windows 
 
-    -> https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-types.html
+            -> When we select windows, aws prompts for private key to show password i.e key is mandatory.
+
+    -> https://aws.amazon.com/ec2/instance-types/
 
     -> https://miro.medium.com/v2/0*TOn9iET13IF9we-k.jpg
 
@@ -501,6 +505,16 @@ Class - 7 (EC2 Server Setup With Ecommerce Application)
 
             -> ssh -i aws.pem ubuntu@3.138.172.167
 
+        -> AWS 
+
+                -> sudo vi /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
+
+                -> Set PasswordAuthentication to yes
+
+                -> Restart ssh service using 
+
+                    -> sudo systemctl restart ssh 
+
     -> Web Server 
 
         -> A web server is computer software that accepts requests via HTTP/S 
@@ -511,7 +525,9 @@ Class - 7 (EC2 Server Setup With Ecommerce Application)
         -> Setup Web Server 
 
             -> sudo apt update -y 
+            -> sudo ss -ntpl
             -> sudo apt install nginx -y 
+            -> sudo ss -ntpl
 
         -> Ecommerce Application URL 
 
@@ -537,7 +553,12 @@ Class - 8 (SNAPSHOTS & AMI's)
 
         -> Next step is to setup Server in B-Zone 
 
-    -> We are opening new business unit in Mumbai Region, Earlier we had business unit in US Region 
+    -> We Lost Server Key, Now We Need Imp Data which is in server 
+
+        -> Solution is SNAPSHOTS Only 
+
+    -> We are opening new business unit in Mumbai Region, 
+    Earlier we had business unit in US Region 
 
         -> Next step is to setup Server in Mumbai Region 
 
@@ -549,5 +570,29 @@ Class - 8 (SNAPSHOTS & AMI's)
 
         -> SNAPSHOTS are applicable for EBS VOLUMES (Disk)
 
-        
+
+Class - 9 
+==========
+
+    -> When We Create Instance By Default We Get Root Volume (Primary OS Disk)
+
+    -> Additionally we can add more volumes i.e Additional Volume (Secondary Disk)
+
+    -> When We Create Snapshot From A Volume, We Cannot Use Snapshots Directly 
+
+        -> Using Snapshots We Need To Create Volumes Once Again 
+
+    -> Every EC2 instance must have a root volume(Primary Disk), 
+    but Additional Volume(External Disk) is Optional.
+
+    -> Any additional volume can be attached or detached from 
+    instance at any time, but not possible for Root Volumes,
+    if you want to detach root volume, only after stopping instance
+    we can detach root volume
+
+    -> Root or Additional Volumes, size cannot be decreased 
+    once created, meaning only scaling up is possible. 
+
+
+
 
