@@ -594,5 +594,86 @@ Class - 9
     once created, meaning only scaling up is possible. 
 
 
+Class - 10
+==========
+
+    -> Create Snapshots 
+
+        -> Root Volumes 
+
+        -> Additional Volumes 
+
+        -> NOTE: Our Previous Scenario is creating a Snapshot out of root volume 
+        then in this scenario, we need to stop the instance, detach the existing 
+        root volume, then create new volume from snapshot and then attach 
+        newly created volume to instance and start the instance. 
+
+    -> Create AMI's 
+
+        -> NOTE: Applicable For Root Volumes Only 
+
+        -> We Cannot Create AMI's For Additional Volumes 
+
+    
+    -> AMI's - Snapshots are Linked To EBS Volumes 
+
+    -> NOTE: EBS Limitations 
+
+        -> Using EBS We Cannot Get Data Directly Across Multiple Zones 
+
+        -> Using EBS We Cannot Connect To Multiple Instances At Same Time 
+        
+        -> Using EBS We Can Only Scale Up, No Scale Down Possible
+
+        -> Using EBS We Can Only Scale Up to TB's (65536 GB) 
+
+    
+    -> EFS Storage (Cloud Native NFS)
+
+        -> Elastic File Storage 
+
+        -> NOTE: All the above EBS Limitations can be 
+        resolved using EFS. 
+
+        -> EFS Cannot Be Used as Root Volume 
+
+        -> AWS EFS Provides Fully Managed NFS File System 
+
+        -> In EFS, You Only Pay For What You Use 
+
+            -> In EBS We Created 500 GB, but used only 100 GB, 
+            we are billed for 500 GB. 
+
+            -> In EFS What you are using, you will be billed 
+            only for useable storage (100 GB)
+
+                -> Being Elastic, auto expands when we add data,
+                auto shrinks when we delete data
 
 
+        -> Using EFS We Can Get Data Directly Across Multiple Zones 
+
+        -> Using EFS We Can Connect To Multiple Instances At Same Time 
+        
+        -> Using EFS We Can Only Scale Up and Scale Down Possible
+
+        -> Using EFS We Can Scale Up to PB's (8 exabyte i.e 8000 PB's)
+
+        -> EFS Uses Port 2049, it's not for Instances, this is for 
+        EFS File System.
+
+        -> To access EFS file system in VPC, 
+        you can create one or more mount targets in the VPC 
+
+        -> If there are multiple subnets in an AZ, 
+        you can create a mount target in one of the subnets,
+        then all the instances in that AZ will share the mount target.
+
+        -> AWS recommends that you create mount targets in all the AZ's, 
+        so that you can easily mount the file system on EC2 instances 
+        that you might launch in any zone in future, 
+        as there are no charges for mount targets
+
+        -> https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWDK7vWWgkjJ-6s3I2OCUPOA62JX6gOC9sENZkGlQBSQ&s=10
+
+    
