@@ -1,0 +1,15 @@
+- Linux (10 Days)
+
+- Scripting (Bash / Powershell / Python) (30 Days)
+
+- Code Management (Git & GitHub) (5 Days)
+
+- Build Management (Application Related Side -> Transitions To Docker) (3 Days)
+
+- Test Management - SonarQube (DevSecOps) (2 Days)
+
+- Releases (Docker - Docker Hub - AWS ECR - AZURE ACR) (7-10 Days)
+
+- Deployment (Kubernetes) (10 Days)
+
+- CI / CD Pipelines (Jenkins) (7 Days) 

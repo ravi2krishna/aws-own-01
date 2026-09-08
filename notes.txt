@@ -676,4 +676,121 @@ Class - 10
 
         -> https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWDK7vWWgkjJ-6s3I2OCUPOA62JX6gOC9sENZkGlQBSQ&s=10
 
+
+Class - 11
+==========
+
+    -> AWS EBS 
+
+        -> AWS EBS You need to mount EBS onto an Amazon EC2 instance. 
+        Use cases include System Softwares, transactional database management.
+
+    -> AWS EFS 
+
+        -> AWS EFS file storage system that grows and shrinks as you 
+        add and remove files. You can mount EFS onto several EC2 instances
+        at the same time.
+
+    -> AWS S3 
+
+        -> Amazon S3 is useful for hosting static assets like 
+        website images, videos, pdf’s etc. 
+        You can access the S3 service from anywhere on the internet.
+
+    -> Customer Requirement 
+
+        -> They Need LMS(Learning Management System) Platform 
+
+            -> How We Can Utilize AWS EBS, AWS EFS & AWS S3.
+
     
+    
+    -> S3 (Simple Storage Service)        
+
+        -> https://aws.amazon.com/s3/
+
+        -> Object storage built to retrieve any amount of data from anywhere.
+
+        -> S3 Is Internet Based Storage 
+
+        -> S3 Buckets & S3 Objects 
+
+        -> S3 Bucket 
+
+            -> Data is stored in Buckets i.e they are main storage containers.
+
+            -> Buckets have no size 
+
+        
+        -> S3 Objects 
+
+            -> An Object is File 
+
+            -> You can keep Unlimited Objects In Bucket
+
+            -> But Max Size For an individual Object is 5 TB 
+
+            -> S3 Objects Can Be Stored Across Multiple Zones 
+            For High Availability. 
+
+        
+        -> NOTE: By default all Buckets and Objects are Private. 
+
+            -> To Allow Access We Need To Enable Multiple Permissions 
+
+                -> On Bucket Level Permissions Turn Off - Block all public access
+
+                -> On Bucket Level Permissions -  Edit Access control list (ACL)
+
+                -> On Bucket Level Permissions - In ACL's Allow List & Read Access 
+
+                -> Go To Respective Object - Permissions - Access control list (ACL)
+                    In ACL's Allow List & Read Access  
+
+        
+        -> Like We Have Instance Types and EBS Volume Types, We Got 
+        S3 Storage Classes 
+
+        -> A Storage Class represents the classification assigned to each object in S3.
+
+        -> Each storage class has varying attributes
+            
+            -> Storage cost
+            
+            -> Object availability i.e Frequency of access (to the object)
+
+        -> Current Storage Class Types include:
+
+            Amazon S3 Standard
+            Amazon S3 Standard-Infrequent Access
+            Amazon S3 Intelligent-Tiering
+            Amazon S3 One Zone-Infrequent Access
+            Amazon Glacier
+            Amazon Glacier Deep Archive
+
+        -> https://aws.amazon.com/s3/storage-classes/
+
+
+        
+        -> S3 Life Cycle Polices 
+
+            -> Manage Data retention policy 
+
+            -> An object lifecycle policy is a set of rules that 
+            automate the transitioning of an object's storage class to a 
+            different storage class (or deletion) based on specified time intervals.
+
+            -> By default, lifecycle policies are disabled on a bucket.
+
+            -> https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGWw6_-gVisc9bOpFyY62DKmhmfm80-RSIQQSiy_sQuKCsO77hd1ve7oRt&s=10
+
+    
+    -> S3 Versioning 
+
+        -> S3 versioning is a feature to manage and store versions of an object
+
+        -> S3 versioning protects your data against accidental overrides and deletion.
+
+        -> By default, versioning is disabled on all buckets.
+
+        
